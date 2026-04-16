@@ -23,7 +23,7 @@ const Navbar = () => {
           <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center bg-white/10 backdrop-blur-sm">
             <Compass className="w-5 h-5 text-yellow-200" />
           </div>
-          <span className="text-xl font-semibold tracking-tight uppercase">
+          <span className="text-xl font-semibold tracking-tight uppercase text-black ">
             Harmont
           </span>
         </Link>
@@ -34,7 +34,7 @@ const Navbar = () => {
             <Link
               key={link.name}
               href={link.href}
-              className="relative text-sm font-medium text-white/80 hover:text-white transition-colors group"
+              className="relative text-sm font-medium text-black/80 hover:text-gray-500 transition-colors group"
             >
               {index === 0 && (
                 <span className="absolute -left-3 top-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-yellow-200 rounded-full" />

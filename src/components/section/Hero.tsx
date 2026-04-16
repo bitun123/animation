@@ -21,11 +21,11 @@ function Hero() {
         <Navbar />
 
         <div className="w-full flex justify-center items-center flex-col gap-2 text-center mt-3 ">
-          <h1 className="text-[3rem] lg:text-[4.5rem] leading-[3.5rem] lg:leading-[4.5rem] font-md text-black">
+          <h1 className="text-[2.5rem] lg:text-[4.5rem] leading-[3.5rem] lg:leading-[4.5rem] font-md text-black">
             Find Your <br />
             Perfect <span className="text-[#F9F0A9]">Space</span>
           </h1>
-          <p className=" text-[0.675rem] lg:text-sm leading-5 font-light text-gray-300">
+          <p className=" text-[0.500rem] lg:text-sm leading-5 font-light text-gray-300">
             Discover Handpicked Luxury cabins in breathtaking locations unplug,{" "}
             <br /> Unwind ,And Reconnected With What Matters Most .
           </p>

@@ -1,0 +1,37 @@
+<svg width="300" height="300" viewBox="0 0 300 300"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Rotating group -->
+  <g>
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 150 150"
+      to="360 150 150"
+      dur="6s"
+      repeatCount="indefinite" />
+
+    <!-- Outer circle (no fill = transparent) -->
+    <circle cx="150" cy="150" r="140"
+            fill="none"
+            stroke="#888"
+            stroke-width="4"/>
+
+    <!-- Cross lines -->
+    <line x1="150" y1="20" x2="150" y2="280"
+          stroke="#6a9" stroke-width="2"/>
+    <line x1="20" y1="150" x2="280" y2="150"
+          stroke="#6a9" stroke-width="2"/>
+
+    <!-- Diagonals -->
+    <line x1="40" y1="40" x2="260" y2="260"
+          stroke="#7ab" stroke-width="1.5"/>
+    <line x1="260" y1="40" x2="40" y2="260"
+          stroke="#7ab" stroke-width="1.5"/>
+
+    <!-- Center dot -->
+    <circle cx="150" cy="150" r="8" fill="#222"/>
+
+  </g>
+
+</svg>

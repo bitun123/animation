@@ -30,7 +30,7 @@ export async function ScrollSection() {
     },
   ];
   return (
-    <div className="w-full min-h-screen bg-gray-300 flex flex-col items-center gap-8 py-16">
+    <div className="w-full  bg-[#EFEEF1] flex flex-col items-center gap-8 py-16">
      <div className="flex flex-col gap-1 text-center">
        <h1 className="text-3xl text-black font-bold uppercase">
         gallery 

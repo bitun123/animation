@@ -1,0 +1,45 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Rotating group -->
+  <g>
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 150 150"
+      to="360 150 150"
+      dur="6s"
+      repeatCount="indefinite" />
+
+    <!-- Background -->
+    <defs>
+      <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#1e2a44"/>
+        <stop offset="100%" stop-color="#0b1324"/>
+      </radialGradient>
+
+      <!-- Circular path for text -->
+      <path id="circlePath"
+        d="M150,150 m-110,0 a110,110 0 1,1 220,0 a110,110 0 1,1 -220,0" />
+    </defs>
+
+    <!-- Outer circle -->
+    <circle cx="150" cy="150" r="140" fill="url(#bgGrad)" />
+
+    <!-- Circular text -->
+    <text fill="white" font-size="16" letter-spacing="1">
+      <textPath href="#circlePath">
+        • Request a call • Request a call • Request a call • Request a call • Request a call • Request a call •
+      </textPath>
+    </text>
+
+    <!-- Arrow -->
+    <g stroke="#6BE675" stroke-width="4" fill="none" stroke-linecap="round">
+      <line x1="120" y1="180" x2="180" y2="120" />
+      <polyline points="165,120 180,120 180,135" />
+    </g>
+
+    <!-- Inner glow circle -->
+    <circle cx="150" cy="150" r="90" stroke="#6BE675" stroke-opacity="0.2" fill="none" />
+
+  </g>
+</svg>

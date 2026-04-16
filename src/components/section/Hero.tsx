@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Navbar from "../ui/Navbar";
 import { motion } from "framer-motion";
-import { Book } from "lucide-react";
+
 import BookingBar from "../ui/BookingBar";
 
 function Hero() {
@@ -90,7 +90,7 @@ function Hero() {
           </div>
         </div>
         <div className="w-full lg:flex items-center justify-center mt-2 hidden ">
-          <BookingBar/>
+          <BookingBar />
         </div>
       </div>
     </section>

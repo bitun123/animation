@@ -66,7 +66,7 @@ const btnRef = useRef<HTMLDivElement | null>(null);
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link
-          ref={logoRef}
+       
           href="/"
           className="flex items-center gap-2 text-white z-50"
         >

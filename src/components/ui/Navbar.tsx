@@ -9,14 +9,14 @@ import gsap from "gsap";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-const itemRefs = useRef<(HTMLAnchorElement | null)[]>([]); 
-const logoRef = useRef<HTMLDivElement | null>(null);
-const btnRef = useRef<HTMLDivElement | null>(null);  
+  const itemRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+  const logoRef = useRef<HTMLAnchorElement | null>(null);
+  const btnRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       const links = itemRefs.current.filter(
-        (el): el is HTMLDivElement => el !== null,
+        (el): el is HTMLAnchorElement => el !== null,
       );
 
       const tl = gsap.timeline({ delay: 0.3 });
@@ -66,14 +66,12 @@ const btnRef = useRef<HTMLDivElement | null>(null);
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link
-       
-          href="/"
-          className="flex items-center gap-2 text-white z-50"
-        >
+           ref={logoRef}
+        href="/" className="flex items-center gap-2 text-white z-50">
           <div
-          
-            ref={logoRef}
-          className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center bg-white/10 backdrop-blur-sm">
+         
+            className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center bg-white/10 backdrop-blur-sm"
+          >
             <Compass className="w-5 h-5 text-yellow-200" />
           </div>
           <span className="text-xl font-semibold tracking-tight uppercase text-black ">
@@ -85,7 +83,9 @@ const btnRef = useRef<HTMLDivElement | null>(null);
         <div className="hidden md:flex items-center gap-8 bg-black/10 backdrop-blur-md px-8 py-3 rounded-full border border-white/10">
           {navLinks.map((link, index) => (
             <Link
-              ref={(el) => (itemRefs.current[index] = el)}
+            ref={(el) => {
+        itemRefs.current[index] = el;
+      }}
               key={link.name}
               href={link.href}
               className="relative text-sm font-medium text-black/80 hover:text-gray-500 transition-colors group"

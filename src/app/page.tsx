@@ -6,6 +6,7 @@ import CardSection from "@/components/section/CardSection";
 import SecondCardSection from "@/components/section/SecondCardSection";
 import OpportunitySection from "@/components/section/OpportunitySection";
 import Testimonial from "@/components/section/Testimonial";
+import FaqSection from "@/components/section/FaqSection";
 
 function page() {
   return (
@@ -16,6 +17,7 @@ function page() {
      <SecondCardSection/>
      <OpportunitySection/>
      <Testimonial/>
+     <FaqSection/>
     </div>
   );
 }

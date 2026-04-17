@@ -32,12 +32,12 @@ function OpportunitySection() {
           />
         </div>
       </div>
-      <div className="flex  gap-4 bg-white  rounded-2xl lg:flex-row lg:gap-2 lg:w-[60%] justify-between p-4  flex-col w-full">
-        <Card />
+      <div className="flex  gap-4 bg-white  rounded-2xl lg:flex-row lg:gap-2 lg:w-[60%] justify-between p-5  flex-col w-full">
+        <Card bgColor="#D9BFFF" />
 
-        <Card />
+        <Card bgColor="#BEFCFF" />
 
-        <Card />
+        <Card bgColor="#D0FEBF" />
       </div>
     </div>
   );

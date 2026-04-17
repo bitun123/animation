@@ -1,5 +1,5 @@
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
-import { div } from "framer-motion/client";
+
 
 function Testimonial() {
   const cards = [

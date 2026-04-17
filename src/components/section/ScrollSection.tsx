@@ -1,4 +1,4 @@
-import { title } from "process";
+
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
 
 export async function ScrollSection() {

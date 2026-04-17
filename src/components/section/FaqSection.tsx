@@ -4,10 +4,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { div } from "framer-motion/client";
+
 function FaqSection() {
   return (
-    <div className="w-full bg-[#F3F3F3] p-2 flex  flex-col  gap-2 justify-center items-center cursor-pointer">
+    <div className=" w-full bg-[#F3F3F3] p-2 flex  flex-col  gap-2 justify-center items-center cursor-pointer">
       <Accordion
         type="single"
         collapsible
@@ -41,7 +41,7 @@ function FaqSection() {
             during business days.
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="support">
+        <AccordionItem value="hey">
           <AccordionTrigger className="text-xl font-semibold">
             How can I contact customer support?
           </AccordionTrigger>
@@ -50,7 +50,7 @@ function FaqSection() {
             during business days.
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="support">
+        <AccordionItem value="say">
           <AccordionTrigger className="text-xl font-semibold ">
             what if the sale falls through?
           </AccordionTrigger>

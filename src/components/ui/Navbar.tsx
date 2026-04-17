@@ -1,12 +1,58 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Compass, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import gsap from "gsap";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const logoRef = useRef<(HTMLDivElement | null)[]>([]);
+  const btnRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const links = itemRefs.current.filter(
+        (el): el is HTMLDivElement => el !== null,
+      );
+
+      const tl = gsap.timeline({ delay: 0.3 });
+
+      // Logo first
+      tl.from(logoRef.current, {
+        opacity: 0,
+        y: -20,
+        duration: 0.4,
+      })
+
+        .from(
+          links,
+          {
+            opacity: 0,
+            y: -20,
+            stagger: 0.2, // 🔥 stagger here
+            duration: 0.4,
+          },
+          "-=0.2",
+        )
+
+        // Button last
+        .from(
+          btnRef.current,
+          {
+            opacity: 0,
+            scale: 0.9,
+            duration: 0.4,
+          },
+          "-=0.3",
+        );
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   const navLinks = [
     { name: "Locations", href: "#" },
@@ -19,7 +65,11 @@ const Navbar = () => {
     <header className=" w-full z-50 px-9 lg:px-4 py-4">
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 text-white z-50">
+        <Link
+          ref={logoRef}
+          href="/"
+          className="flex items-center gap-2 text-white z-50"
+        >
           <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center bg-white/10 backdrop-blur-sm">
             <Compass className="w-5 h-5 text-yellow-200" />
           </div>
@@ -32,6 +82,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-8 bg-black/10 backdrop-blur-md px-8 py-3 rounded-full border border-white/10">
           {navLinks.map((link, index) => (
             <Link
+              ref={(el) => (itemRefs.current[index] = el)}
               key={link.name}
               href={link.href}
               className="relative text-sm font-medium text-black/80 hover:text-gray-500 transition-colors group"
@@ -45,7 +96,7 @@ const Navbar = () => {
         </div>
 
         {/* Action Button & Mobile Toggle */}
-        <div className="flex items-center gap-4">
+        <div ref={btnRef} className="flex items-center gap-4">
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

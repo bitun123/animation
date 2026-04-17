@@ -10,7 +10,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
 const itemRefs = useRef<(HTMLAnchorElement | null)[]>([]); 
-const logoRef = useRef<HTMLAnchorElement | null>(null);
+const logoRef = useRef<HTMLDivElement | null>(null);
 const btnRef = useRef<HTMLDivElement | null>(null);  
 
   useEffect(() => {
@@ -70,7 +70,10 @@ const btnRef = useRef<HTMLDivElement | null>(null);
           href="/"
           className="flex items-center gap-2 text-white z-50"
         >
-          <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center bg-white/10 backdrop-blur-sm">
+          <div
+          
+            ref={logoRef}
+          className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center bg-white/10 backdrop-blur-sm">
             <Compass className="w-5 h-5 text-yellow-200" />
           </div>
           <span className="text-xl font-semibold tracking-tight uppercase text-black ">

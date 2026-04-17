@@ -10,7 +10,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
 const itemRefs = useRef<(HTMLAnchorElement | null)[]>([]); 
-const logoRef = useRef<HTMLAnchorElement | null>(null);   
+const logoRef = useRef<HTMLAnchorElement | null>(null);
 const btnRef = useRef<HTMLDivElement | null>(null);  
 
   useEffect(() => {

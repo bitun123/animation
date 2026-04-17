@@ -7,11 +7,11 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 function Hero() {
-  const title = useRef<(HTMLDivElement | null)[]>([]);
-  const feature1 = useRef<(HTMLDivElement | null)[]>([]);
-  const feature2 = useRef<(HTMLDivElement | null)[]>([]);
-  const feature3 = useRef<(HTMLDivElement | null)[]>([]);
-  const feature4 = useRef<(HTMLDivElement | null)[]>([]);
+const title = useRef<HTMLSpanElement | null>(null);
+const feature1 = useRef<HTMLSpanElement | null>(null);
+const feature2 = useRef<HTMLSpanElement | null>(null);
+const feature3 = useRef<HTMLSpanElement | null>(null);
+const feature4 = useRef<HTMLParagraphElement | null>(null);
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ delay: 0.5 });

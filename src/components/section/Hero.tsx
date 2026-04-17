@@ -2,10 +2,55 @@
 import Image from "next/image";
 import Navbar from "../ui/Navbar";
 import { motion } from "framer-motion";
-
 import BookingBar from "../ui/BookingBar";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 function Hero() {
+  const title = useRef<(HTMLDivElement | null)[]>([]);
+  const feature1 = useRef<(HTMLDivElement | null)[]>([]);
+  const feature2 = useRef<(HTMLDivElement | null)[]>([]);
+  const feature3 = useRef<(HTMLDivElement | null)[]>([]);
+  const feature4 = useRef<(HTMLDivElement | null)[]>([]);
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ delay: 0.5 });
+
+      tl.from(title.current, {
+        opacity: 0,
+        y: -20,
+        duration: 0.6,
+        ease: "power3.out",
+      })
+        .from(feature1.current, {
+          opacity: 0,
+          y: -20,
+          duration: 0.6,
+          ease: "power3.out",
+        })
+        .from(feature2.current, {
+          opacity: 0,
+          y: -20,
+          duration: 0.6,
+          ease: "power3.out",
+        })
+        .from(feature3.current, {
+          opacity: 0,
+          y: -20,
+          duration: 0.6,
+          ease: "power3.out",
+        })
+        .from(feature4.current, {
+          opacity: 0,
+          y: -20,
+          duration: 0.6,
+          ease: "power3.out",
+        });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section className=" w-full h-screen overflow-hidden flex  items-center justify-center">
       <Image
@@ -22,10 +67,24 @@ function Hero() {
 
         <div className="w-full flex justify-center items-center flex-col gap-2 text-center mt-3 ">
           <h1 className="text-[2.5rem] lg:text-[4.5rem] leading-[3.5rem] lg:leading-[4.5rem] font-md text-black">
-            Find Your <br />
-            Perfect <span className="text-[#F9F0A9]">Space</span>
+            <span ref={title} className="inline-block">
+              Find{" "}
+            </span>{" "}
+            <span ref={feature1} className="inline-block">
+              Your
+            </span>{" "}
+            <br />
+            <span ref={feature2} className="inline-block">
+              Perfect
+            </span>{" "}
+            <span ref={feature3} className="text-[#F9F0A9] inline-block">
+              Space
+            </span>
           </h1>
-          <p className=" text-[0.500rem] lg:text-sm leading-5 font-light text-gray-300">
+          <p
+            ref={feature4}
+            className=" text-[0.500rem] lg:text-sm leading-5 font-light text-gray-300"
+          >
             Discover Handpicked Luxury cabins in breathtaking locations unplug,{" "}
             <br /> Unwind ,And Reconnected With What Matters Most .
           </p>

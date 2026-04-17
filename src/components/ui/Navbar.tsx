@@ -9,9 +9,9 @@ import gsap from "gsap";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const logoRef = useRef<(HTMLDivElement | null)[]>([]);
-  const btnRef = useRef<HTMLDivElement | null>(null);
+const itemRefs = useRef<(HTMLAnchorElement | null)[]>([]); 
+const logoRef = useRef<HTMLAnchorElement | null>(null);   
+const btnRef = useRef<HTMLDivElement | null>(null);  
 
   useEffect(() => {
     const ctx = gsap.context(() => {
